@@ -1,6 +1,7 @@
 import requests
 from ifsugar import _try
 
+
 def get_page_encoding(url):
     """检查url对应的网页的中文编码
     >>> url = 'https://www.baidu.com'
@@ -24,4 +25,5 @@ def get_page_encoding(url):
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

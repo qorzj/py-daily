@@ -2,15 +2,13 @@ import requests
 
 
 def get_page_encoding(url):
-    curEncode = "unknown"
+    encode = "unknown"
     try:
-        curEncode=requests.get(url).encoding
+        encode = requests.get(url).encoding
     except Exception as e:
         print(e)
     finally:
-        return curEncode
-
-
+        return encode
 
 xx = get_page_encoding("https://www.douban.com")
 print(xx)

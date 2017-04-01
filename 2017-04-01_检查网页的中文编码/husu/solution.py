@@ -1,14 +1,18 @@
 import requests
+import logging
+import chardet
 
 
 def get_page_encoding(url):
     encode = "unknown"
     try:
-        encode = requests.get(url).encoding
+        content = requests.get(url).content
+        encode = chardet.detect(content)["encoding"]
     except Exception as e:
-        print(e)
+        logging.exception(e)
     finally:
         return encode
 
-xx = get_page_encoding("https://www.douban.com")
+
+xx = get_page_encoding("http://parseccrux.qiniudn.com/4465p3cttj10.txt")
 print(xx)

@@ -1,4 +1,6 @@
-实现一个函数`get_page_encoding(url:str)->'gbk|utf-8|unknown'`
+## 题目
+
+实现一个函数`get_page_encoding(url:str)->'gbk|utf-8|unknown'`，作用是给一个网页的链接，返回这个网页的中文编码是utf-8还是gbk。注意有大量的中文网站没有在meta中指定charset，但我们也要能处理这类网页（假设这些网页都是gbk或utf-8编码的）。
 
 url是以`http://`或`https://`开头的链接地址
 

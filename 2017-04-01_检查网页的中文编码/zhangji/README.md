@@ -1,3 +1,5 @@
+准备依赖库：`pip install -r requirements`
+
 ```
 Help on module solution:
 

@@ -1,13 +1,13 @@
 import datetime
 import re 
 import logging
-def calc_date_delta(url):
+def calc_date_delta(query):
     try:
-        array_url = url.split(' ')
+        array_query = query.split(' ')
 
-        str_offset = array_url[0]
-        str_operator = array_url[2]
-        array_start =  re.split('[\-\/]',array_url[3])
+        str_offset = array_query[0]
+        str_operator = array_query[2]
+        array_start =  re.split('[\-\/]',array_query[3])
 
         date_start = datetime.datetime.strptime(array_start[0]+'-'+array_start[1]+'-'+array_start[2], '%Y-%m-%d')
 

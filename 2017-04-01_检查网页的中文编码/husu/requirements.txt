@@ -1,2 +1,3 @@
 requests
-ifsugar
+logging
+chardet

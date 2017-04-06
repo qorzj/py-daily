@@ -8,8 +8,7 @@ def date_distance(date_str):
     fmt = '%Y-%m-%d'
     post_date = datetime.strptime(date_str, fmt)
     post_date = post_date.replace(tzinfo=tz)
-    a = (post_date - now_date)
-    return a.days
+    return (post_date - now_date).days
 
 if __name__ == '__main__':
-    print(date_distance('2017-04-08'))
+    print(date_distance('2017-04-09'))

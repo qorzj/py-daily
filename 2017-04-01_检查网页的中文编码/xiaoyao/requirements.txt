@@ -1,0 +1,4 @@
+requests
+ifsugar
+chardet
+

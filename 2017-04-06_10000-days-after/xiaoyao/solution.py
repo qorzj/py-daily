@@ -12,12 +12,11 @@ def calc_date_delta(str):
         '2020-07-22'
     """
     fmt = '%Y-%m-%d'
-    tz = timezone(timedelta(hours=8))
     segs = str.lower().split(' ')
     delta_direct = 1 if segs[2] == 'after' else -1
     delta_days = int(segs[0])
     origin_date = [int(i) for i in re.search(r'(\d{4})\D(\d{1,2})\D(\d{1,2})', segs[3]).groups()]
-    origin_date = datetime.now(tz).replace(year=origin_date[0], month=origin_date[1], day=origin_date[2]) \
+    origin_date = datetime.now().replace(year=origin_date[0], month=origin_date[1], day=origin_date[2]) \
                   + timedelta(days=delta_direct*delta_days)
     return origin_date.strftime(fmt)
 

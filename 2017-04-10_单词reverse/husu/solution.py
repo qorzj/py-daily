@@ -4,8 +4,8 @@
 def reverse_sentence(s):
     result = ""
     for word in s.split():
-        result = result + (word[::-1]) + " "
-    return result[0:-1]
+        result = " ".join({result, word[::-1]})
+    return result
 
 
 print(reverse_sentence("xdsf dsfdf sdfds"))

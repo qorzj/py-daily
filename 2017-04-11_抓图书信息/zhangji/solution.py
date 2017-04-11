@@ -7,10 +7,10 @@ def book_info(url):
         text = requests.get(url, timeout=5).text
         assert '<span property="v:itemreviewed">' in text and '<span class="pl">出版社:</span>' in text
         meta, text = text.split('<meta name="keywords" content="', 1)[-1].split('">', 1)
-        book_name, text = text.split('<span property="v:itemreviewed">', 1)[-1].split('</span>', 1)
-        press, text = text.split('<span class="pl">出版社:</span>', 1)[-1].split('<br', 1)
-        book_name = book_name.strip()
-        press = press.strip()
+        book_name, text = text.split('<span property="v:itemreviewed">', 1)[-1].split('</span>', 1); \
+                book_name = book_name.strip()
+        press, text = text.split('<span class="pl">出版社:</span>', 1)[-1].split('<br', 1); \
+                press = press.strip()
         author = meta.split(book_name + ',', 1)[-1].split(',' + press, 1)[0]
         return {'name': book_name, 'author': author, 'press': press}
     except Exception as e:

@@ -1,0 +1,2 @@
+requests
+lxml==3.6.3

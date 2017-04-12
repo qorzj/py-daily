@@ -2,10 +2,10 @@
 
 
 def reverse_sentence(s):
-    result = ""
+    result = []
     for word in s.split():
-        result = " ".join({result, word[::-1]})
-    return result
+        result.append(word[::-1])
+    return ' '.join(result)
 
 
 print(reverse_sentence("xdsf dsfdf sdfds"))

@@ -47,14 +47,20 @@ class Vector(Iterable):
         return len(self.value)
 
     def __iter__(self):
-        return self.read()
-
-    def read(self):
         for v in self.value:
             yield v
 
+    def __getitem__(self, key):
+        return self.value[key]
 
+    def __delitem__(self, key):
+        return self.value.popitem(key)
 
+    def __setitem__(self, key, value):
+        return self.value.append(value)
+
+    def __len__(self):
+        return len(self.value)
 
 if __name__ == '__main__':
     import doctest

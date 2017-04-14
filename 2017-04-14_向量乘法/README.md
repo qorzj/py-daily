@@ -1,5 +1,5 @@
 ## 题目
-实现一个向量类Vector，使它支持乘法运算符`*`，下标运算`[]`，且可以转为list和str，支持len(), sum(), max()等builtins函数。vector * vector的含义是向量内积(也称为点积)。vector * int表示向量按比例缩放。例如：
+实现一个向量类Vector，使它支持乘法运算符`*`，下标运算`[]`，且可以转为list和str，支持len(), sum(), max()等list支持的builtins函数。vector * vector的含义是向量内积(也称为点积)。vector * int表示向量按比例缩放。例如：
 ```
 Vector(1,2,3) * Vector(1,2,3) --> Vector(1,4,9)
 v = Vector(3,4,5,6)

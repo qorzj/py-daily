@@ -1,3 +1,6 @@
+from collections import Iterable
+
+
 class Vector(list):
     """
         >>> Vector(1, 2, 3) * Vector(2, 3, 4)
@@ -18,8 +21,9 @@ class Vector(list):
         >>> sum(v)
         18
     """
+
     def __init__(self, *args):  # known special case of list.__init_
-        if isinstance(args[0], list) or isinstance(args[0], tuple):
+        if isinstance(args[0], Iterable):
             list.__init__(self, args[0])
         else:
             list.__init__(self, args)
@@ -41,4 +45,5 @@ class Vector(list):
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

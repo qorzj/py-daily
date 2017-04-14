@@ -15,7 +15,7 @@ def trim_diacritic(s):
     'zhang san zhang shan li si xi an'
     """
     s = s.replace("'", ' ').lower()
-    return ''.join(list(map(return_sheng, s)))
+    return ''.join(return_sheng(i) for i in s)
 
 
 def pinyin_sort(names):

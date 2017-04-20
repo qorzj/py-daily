@@ -7,7 +7,7 @@ import time
 chars = string.digits + string.ascii_letters
 
 
-def get_signature(url, ticket, timestamp=None, noncestr=None, ):
+def get_signature(url, ticket, timestamp=None, noncestr=None):
     """
     >>> get_signature('http://mp.weixin.qq.com?params=value',\
     'sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg','1414587457','Wm3WZYTPz0wzccnW')

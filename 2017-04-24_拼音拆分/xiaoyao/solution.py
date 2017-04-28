@@ -18,8 +18,11 @@ sheng = {'ā': 'a', 'á': 'a', 'ǎ': 'a', 'à': 'a',
 def splitPinYin(str):
     '''
     >>> splitPinYin("shí nián shēngsǐ liǎng mángmáng")
-    ['shí', 'nián', 'shēng', 'sǐ', 'liǎng', 'máng']
+    ['shí', 'nián', 'shēng', 'sǐ', 'liǎng', 'máng', 'máng']
+    >>> splitPinYin("zhè gèjī xiè xiū lǐ dàshī'nǎ lái de")
+    ['zhè', 'gè', 'jī', 'xiè', 'xiū', 'lǐ', 'dà', 'shī', 'nǎ', 'lái', 'de']
     '''
+    str = str.replace("'", ' ')
     tmp = ''.join(list(map(lambda x: sheng[x] if x in sheng else x, str)))
     for x in Yunmu:
         tmp = tmp.replace(x, '*' * len(x))
@@ -31,6 +34,7 @@ def splitPinYin(str):
     while i < len(indexs) - 1:
         result.append(str[indexs[i]:indexs[i + 1]].strip())
         i += 1
+    result.append(str[indexs[i]:])
     return result
 
 if __name__ == '__main__':

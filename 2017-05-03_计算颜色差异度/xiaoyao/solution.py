@@ -2,11 +2,8 @@
 
 
 def segment(s):
-    s = s[1:]
-    index = 0
-    while index < len(s) - 1:
+    for index in range(1, len(s), 2):
         yield int((s[index:index + 2]), 16)
-        index += 2
 
 
 def color_diff(c1, c2):
@@ -21,5 +18,4 @@ def color_diff(c1, c2):
 
 if __name__ == '__main__':
     import doctest
-
     doctest.testmod()

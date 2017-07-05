@@ -7,6 +7,8 @@ class Vector(list):
     Vector(2, 6, 12)
     >>> Vector(1,2).product([2,3])
     Vector((1, 2), (1, 3), (2, 2), (2, 3))
+    >>> len(Vector(1, 2, 3))
+    3
     """
 
     def __init__(self, *args):  # *表示不确定的参数
@@ -29,6 +31,17 @@ class Vector(list):
 
     def __str__(self):
         return self.__repr__()
+
+    def __add__(self, other):
+        if isinstance(other, int):
+            return Vector(other + x for x in self)
+        if isinstance(other, Iterable) and len(other) == len(self):
+            return Vector(other[i] * self[i] for i in range(len(self)))
+        else:
+            raise ValueError("Vector can't be multiplied by another who has not the same size.")
+
+    def __len__(self):
+        return sum(1 for x in self)
 
     # 计算笛卡尔乘积
     def product(self, value):

@@ -3,24 +3,24 @@ from collections import Iterable
 
 class Vector(list):
     """
-    >>> Vector(1, 2, 3) * Vector(1, 2, 3)
-    Vector(1, 4, 9)
-    >>> v = Vector(3,4,5,6)
-    >>> v * 2
-    Vector(6, 8, 10, 12)
-    >>> v[0]
-    3
-    >>> v[-1]
-    6
-    >>> len(v)
-    4
-    >>> list(v)
-    [3, 4, 5, 6]
-    >>> str(v)
-    'Vector(3, 4, 5, 6)'
-    >>> sum(v)
-    18
-    """
+      >>> Vector(1, 2, 3) * Vector(1, 2, 3)
+      Vector(1, 4, 9)
+      >>> v = Vector(3,4,5,6)
+      >>> v * 2
+      Vector(6, 8, 10, 12)
+      >>> v[0]
+      3
+      >>> v[-1]
+      6
+      >>> len(v)
+      4
+      >>> list(v)
+      [3, 4, 5, 6]
+      >>> str(v)
+      'Vector(3, 4, 5, 6)'
+      >>> sum(v)
+      18
+      """
     def __init__(self, *args):
         if len(args) == 1 and isinstance(args[0], Iterable):
             super().__init__(args[0])

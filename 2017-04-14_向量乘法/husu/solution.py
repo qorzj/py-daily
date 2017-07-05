@@ -9,6 +9,10 @@ class Vector(list):
     Vector((1, 2), (1, 3), (2, 2), (2, 3))
     >>> len(Vector(1, 2, 3))
     3
+    >>> Vector(1,2,3) + 2
+    Vector(3, 4, 5)
+    >>> Vector(1,2,3) + Vector(1,1,1)
+    Vector(2, 3, 4)
     """
 
     def __init__(self, *args):  # *表示不确定的参数
@@ -36,7 +40,7 @@ class Vector(list):
         if isinstance(other, int):
             return Vector(other + x for x in self)
         if isinstance(other, Iterable) and len(other) == len(self):
-            return Vector(other[i] * self[i] for i in range(len(self)))
+            return Vector(other[i] + self[i] for i in range(len(self)))
         else:
             raise ValueError("Vector can't be multiplied by another who has not the same size.")
 
